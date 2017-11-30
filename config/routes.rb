@@ -1,79 +1,10 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
-
-  get 'cohorts/index'
-
-  get 'cohorts/show'
-
-  get 'cohorts/new'
-
-  get 'cohorts/create'
-
-  get 'cohorts/edit'
-
-  get 'cohorts/update'
-
-  get 'cohorts/destroy'
-
-  get 'submissions/index'
-
-  get 'submissions/show'
-
-  get 'submissions/new'
-
-  get 'submissions/create'
-
-  get 'submissions/edit'
-
-  get 'submissions/update'
-
-  get 'submissions/destroy'
-
-  get 'assignments/index'
-
-  get 'assignments/show'
-
-  get 'assignments/new'
-
-  get 'assignments/create'
-
-  get 'assignments/edit'
-
-  get 'assignments/update'
-
-  get 'assignments/destroy'
-
-  get 'students/index'
-
-  get 'students/show'
-
-  get 'students/new'
-
-  get 'students/create'
-
-  get 'students/edit'
-
-  get 'students/update'
-
-  get 'students/destroy'
-
-  get 'teachers/index'
-
-  get 'teachers/show'
-
-  get 'teachers/new'
-
-  get 'teachers/create'
-
-  get 'teachers/edit'
-
-  get 'teachers/update'
-
-  get 'teachers/destroy'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'teachers#index'
+  resources :teachers
+  resources :cohorts
+  resources :students
+  resources :assignments
+  resources :submissions
+  resources :sessions, only: [:new, :create]
+  delete '/logout' => 'sessions#destroy', as: :logout
 end
