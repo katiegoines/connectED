@@ -1,4 +1,4 @@
 class Student < ApplicationRecord
-  belongs_to :submission
-  belongs_to :cohort
+  has_many :submission
+  has_and_belongs_to_many :cohort
 end
